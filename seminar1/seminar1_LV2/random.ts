@@ -39,19 +39,22 @@ const dinner: Dinner= {
     ],
     shuffle(array:Member[]) {
         array.sort(() => Math.random() - 0.5);
-        console.log(array);
         return array;
     },
     organize(array:Member[]) {
-        const dinnerMember=new Array();
+        const dinnerMember:string[]=new Array();
 
         this.shuffle(array);
 
-        dinnerMember[0]=array.find((element)=>element.group==='yb');
-        dinnerMember[1]=array.find((element)=>element.group==='ob');
+        const yb: Member|undefined=array.find((element)=>element.group==='yb');
+        const ob: Member|undefined=array.find((element)=>element.group==='ob');
+        
+        if (yb && ob){
+            dinnerMember.push(yb.name);
+            dinnerMember.push(ob.name);
+        }
 
-        console.log(`오늘의 저녁 식사 멤버는 ${dinnerMember[0].name}(YB),${dinnerMember[1].name}(OB)`);
-    
+        console.log(`오늘의 저녁 식사 멤버는 ${dinnerMember[0]}(YB),${dinnerMember[1]}(OB)`);
     }
 };
 
