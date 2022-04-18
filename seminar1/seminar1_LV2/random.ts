@@ -46,8 +46,8 @@ const dinner: Dinner= {
 
         this.shuffle(array);
 
-        const yb: Member|undefined=array.find((element)=>element.group==='yb');
-        const ob: Member|undefined=array.find((element)=>element.group==='ob');
+        const yb: Member | undefined = array.find((element) => element.group==='yb');
+        const ob: Member | undefined = array.find((element) => element.group==='ob');
         
         if (yb && ob){
             dinnerMember.push(yb.name);
