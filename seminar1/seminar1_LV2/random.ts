@@ -37,17 +37,17 @@ const dinner: Dinner= {
             group: 'ob'
         }
     ],
-    shuffle(array:Member[]) {
-        array.sort(() => Math.random() - 0.5);
-        return array;
+    shuffle(members:Member[]) {
+        members.sort(() => Math.random() - 0.5);
+        return members;
     },
-    organize(array:Member[]) {
+    organize(members:Member[]) {
         const dinnerMember:string[]=new Array();
 
-        this.shuffle(array);
+        this.shuffle(members);
 
-        const yb: Member | undefined = array.find((element) => element.group==='yb');
-        const ob: Member | undefined = array.find((element) => element.group==='ob');
+        const yb: Member | undefined = members.find((element) => element.group==='yb');
+        const ob: Member | undefined = members.find((element) => element.group==='ob');
         
         if (yb && ob){
             dinnerMember.push(yb.name);
